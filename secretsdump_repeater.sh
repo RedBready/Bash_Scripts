@@ -1,4 +1,6 @@
 #!/bin/bash
+# If you want to specify a different number of parallel processes, you can use the -n option followed by the number of processes. For example, to run with 5 parallel processes:
+# ./secretsdump_repeater.sh -n 8 input.txt
 
 show_help() {
     echo "Usage: $0 [file]"
