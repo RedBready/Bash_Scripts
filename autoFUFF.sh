@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/usr/bin/env bash
 # Script to run ffuf on a list of targets in format https://targets.com. No ending "/" needed. Command ads it in.
 
 targetlist=$1
