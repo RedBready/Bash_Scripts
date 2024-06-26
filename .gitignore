@@ -12,8 +12,6 @@
 
 # Packages #
 ############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
 *.7z
 *.dmg
 *.gz
@@ -30,7 +28,6 @@
 *.sqlite
 
 # OS generated files #
-######################
 .DS_Store
 .DS_Store?
 ._*
@@ -38,3 +35,50 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore backup files typically created by editors
+*~
+*.bak
+*.swp
+*.swo
+# Ignore compiled files or shell command history files
+*.ko
+*.obj
+*.elf
+*.gch
+.history
+
+# Ignore specific security-sensitive files
+*.key
+*.cert
+*.pem
+
+# Ignore user-specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignore other potential directories containing generated files
+tmp/
+temp/
+out/
+output/
+build/
+dist/
+cache/
+
+# Ignore environment files
+.env
+.env.local
+
+# Ignore shell script specific files that may contain sensitive info
+config.sh
+settings.sh
+
+# Ignore archives
+*.tar.gz
+
+# Ignore user specific bash profile scripts
+.bash_profile
+.bashrc
+.profile
