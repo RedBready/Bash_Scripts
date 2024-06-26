@@ -35,3 +35,11 @@ while IFS= read -r target; do
 	hostname=$(echo "${target}" | awk -F/ '{print $3}')
 	ffuf -c -u "${target}"/FUZZ -w $wordlist -of csv -o "${hostname}"_"${wordlist_base}".csv -ac
 done <"${targetlist}"
+
+if redcsv2xlsx "${wordlist_base}"_results.xlsx *"${wordlist_base}".csv; then
+	rm *"${wordlist_base}.csv"
+	echo ">[i] .csv files have been cleaned up."
+else
+	echo -e "\033[31m>[i]redcsv2xlsx failed. Is it installed?\033[0m"
+
+fi
