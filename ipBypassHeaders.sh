@@ -6,7 +6,7 @@ wordlist="./wordlists/ipBypassHeaderNameOnly.txt"
 useragent="User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.6478.57 Safari/537.36"
 
 if [[ ! -f $1 ]]; then
-	echo "Usage: $0 urls.txt wordlists.txt"
+	echo "Usage: $0 urls.txt"
 	exit 1
 fi
 
