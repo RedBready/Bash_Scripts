@@ -6,6 +6,7 @@ targetlist=$1
 wordlist=$2
 wordlist_base=$(basename "$wordlist" .txt)
 os_type=$(uname)
+useragent="User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.6478.57 Safari/537.36"
 
 if [[ $# -ne 2 ]]; then
 	echo "Usage: $0 targets.txt wordlist.txt"
@@ -34,7 +35,7 @@ echo ""
 
 while IFS= read -r target; do
 	hostname=$(echo "${target}" | awk -F/ '{print $3}')
-	ffuf -c -u "${target}"/FUZZ -w $wordlist -of csv -o "${hostname}"_"${wordlist_base}".csv -ac
+	ffuf -H "${useragent}" -c -u "${target}"/FUZZ -w $wordlist -of csv -o "${hostname}"_"${wordlist_base}".csv -ac
 done <"${targetlist}"
 
 if redcsv2xlsx "${wordlist_base}"_results.xlsx *"${wordlist_base}".csv; then
