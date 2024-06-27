@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Script to run ffuf on a list of targets in format https://targets.com. No ending "/" needed. Command ads it in.
+# Script to run ffuf on a list of targets in format https://targets.com. No ending "/" needed. Command adds it in.
+# For the last part that combines all csv files into ne xlsx, you need redcsv2xlsr. Install using "pipx install git+https://github.com/RedBready/redcsv2xlsx.git"
 
 targetlist=$1
 wordlist=$2
