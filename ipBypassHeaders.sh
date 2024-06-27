@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/usr/bin/env bash
 # Bash Script that checks for authentication issues by fuzzing for common IP Bypass HTTP Headers
 
 targets=$1
