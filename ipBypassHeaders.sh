@@ -12,5 +12,5 @@ fi
 
 # Change the filter code (-fc) or regex (-fr) as needed based on how the tested API/Web App is responding.
 while IFS= read -r url; do
-	ffuf -c -u "${url}" -H "${useragent}" -H "FUZZ: 127.0.0.1" -w "${wordlist}" -v -fc 403 -fr "access denied"
+	ffuf -c -u "${url}" -H "${useragent}" -H "FUZZ: 127.0.0.1" -w "${wordlist}" -v -fc 401,403 -fr "access denied"
 done <"${targets}"
